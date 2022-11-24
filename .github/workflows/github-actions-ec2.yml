@@ -21,3 +21,13 @@ jobs:
           REMOTE_HOST: ${{secrets.HOST_DNS}}
           REMOTE_USER: ${{secrets.USERNAME}}
           TARGET: ${{secrets.TARGET_DIR}}
+
+      - uses: actions/checkout@v2
+      - name: Python Linter
+        uses: sunnysid3up/python-linter@master
+        with:
+          source: "../news_scraper_personal"
+          mypy-options: "--ignore-missing-imports --show-error-codes"
+          pylint-options: "--rcfile=setup.cfg"
+          isort-options: "-w 100"
+          django: true
