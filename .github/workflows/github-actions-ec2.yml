@@ -26,7 +26,7 @@ jobs:
       - name: Python Linter
         uses: sunnysid3up/python-linter@master
         with:
-          source: "/Users/willsimms/Documents/Personal news_scraper deployment/news_scraper_personal"
+          source: "./news_scraper_personal"
           mypy-options: "--ignore-missing-imports --show-error-codes"
           pylint-options: "--rcfile=setup.cfg"
           isort-options: "-w 100"
